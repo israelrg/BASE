@@ -9,10 +9,10 @@
         $phone = substr($phone, 1);
     }
     
-    echo $phone;
+    //echo $phone;
     //$phone = '1';
     // ---------CONEXIÓN CON LA BASE DE DATOS----------------------------------
-    $basededatos = 'entrenamiento';
+    $basededatos = 'pruebafacebook';
     $link = mysqli_connect("127.0.0.1:3306", "israel", "password");
     mysqli_select_db($link, $basededatos);
     $tildes = $link->query("SET NAMES 'utf8'");
@@ -21,10 +21,9 @@
     
     //$result = mysqli_query($link, "select telefono, nombre, Apellidos, sexo, column1, column2 from importacion where telefono like '%$phone%'"); //Comando de filtrado en mysql
     // Alberto marcos Cea chorizo
-    $result = mysqli_query($link, "select telefono, nombre, Apellidos, sexo, column1, column2 from importacion where 
+    $result = mysqli_query($link, "select telefono, concat_ws(' ', nombre, Apellidos) as juntada, sexo, column1, column2 from importacion where 
     telefono like '%$phone%' 
-    or nombre like '$phone%'
-    or Apellidos like '$phone%'
+    or concat_ws(' ', nombre, Apellidos) LIKE '%$phone%'
     or sexo like '$phone'
     or column1 like '$phone'
     or column2 like '$phone'
@@ -49,9 +48,9 @@
             mysqli_data_seek ($result, $i);
             $extraido= mysqli_fetch_array($result);
             echo "- Telefono: +".$extraido['telefono']."<br/>";
-            echo "- Nombre: ".$extraido['nombre']."<br/>";
-            echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
-            echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
+            echo "- Nombre: ".$extraido['juntada']."<br/>";
+            //echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
+            //echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
             echo "- Sexo: ".$extraido['sexo']."<br/>";
             echo "- Localizacion: ".$extraido['column1']."<br/>";
             echo "- Mas informacion: ".$extraido['column2']."<br/>";
