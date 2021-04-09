@@ -12,7 +12,7 @@
 <body>
     <div class="header">
         <form action="base.php" method="post">
-            <p>Su nombre: <input type="text" name="phone" /></p>
+            <p>Su telefono: <input type="text" name="phone" /></p>
             <p><input type="submit" /></p>
         </form>
     </div>
