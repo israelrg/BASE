@@ -1,7 +1,9 @@
 <link rel="stylesheet" type="text/css" href="estilos.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <?php
-    echo "V.1.0";
-    include('header.php');
+    echo "V.1.1 ";
+    include('index.html');
+    //include('header.php');
     $phone = $_POST['phone'];
     //Maniplacion del string de la entrada
     if($phone[0]=="+")
@@ -12,7 +14,7 @@
     //echo $phone;
     //$phone = '1';
     // ---------CONEXIÓN CON LA BASE DE DATOS----------------------------------
-    $basededatos = 'pruebafacebook';
+    $basededatos = 'entrenamiento';
     $link = mysqli_connect("127.0.0.1:3306", "israel", "password");
     mysqli_select_db($link, $basededatos);
     $tildes = $link->query("SET NAMES 'utf8'");
@@ -44,22 +46,37 @@
     }
     else{
         include('si.php');
+        echo '<table class="table table-striped table-hover  table-dark table-responsive-sm">';
         while($i < $row_cnt && $i<=10){
             mysqli_data_seek ($result, $i);
             $extraido= mysqli_fetch_array($result);
-            echo "- Telefono: +".$extraido['telefono']."<br/>";
-            echo "- Nombre: ".$extraido['juntada']."<br/>";
+            /*
+            echo "<td>- Telefono: +".$extraido['telefono']."</td>";
+            echo "<td>- Nombre: ".$extraido['juntada']."</td>";
             //echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
             //echo "- Apellidos: ".$extraido['Apellidos']."<br/>";
-            echo "- Sexo: ".$extraido['sexo']."<br/>";
-            echo "- Localizacion: ".$extraido['column1']."<br/>";
-            echo "- Mas informacion: ".$extraido['column2']."<br/>";
+            echo "<td>- Sexo: ".$extraido['sexo']."</td>";
+            echo "<td>- Localizacion: ".$extraido['column1']."</td>";
+            echo "<td>- Mas informacion: ".$extraido['column2']."</td>";
+            */
             
             
             
-            echo "<br>-------------------------------<br>";
+
+            echo '
+            <tr>
+            <td>+'.$extraido['telefono'].'</td>
+            <td>'.$extraido['juntada'].'</td>
+            <td>'.$extraido['sexo'].'</td>
+            <td>'.$extraido['column1'].' '.$extraido['column2'].' '.$extraido['column3'].' '.$extraido['column4'].' '.$extraido['column5'].'</td>
+            
+            </tr>
+            ';
+            
+            
             $i++;
         }
+        echo '</table>';
     }
     
     mysqli_free_result($result);
