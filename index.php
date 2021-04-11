@@ -14,17 +14,7 @@ include('header.html');
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <style>
-        button,
-        input[type="submit"],
-        input[type="reset"] {
-            background: none;
-            color: inherit;
-            border: none;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            outline: inherit;
-        }
+        
     </style>
 
 </head>
