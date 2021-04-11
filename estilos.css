@@ -1,9 +1,13 @@
 .no {
-    background-color: rgb(255, 137, 137);
+    background-color: rgb(255, 89, 89);
+    text-align: center;
 }
 
 .si {
     background-color: rgb(112, 255, 112);
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 @keyframes pruebamov {
