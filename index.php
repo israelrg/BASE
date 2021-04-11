@@ -13,6 +13,7 @@ include('header.html');
     <title>Transparent Search Box</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="loader.css">
     <style>
         
     </style>
@@ -32,6 +33,10 @@ include('header.html');
             </div>
         </div>
     </form>
+    <div class="padreloader">
+        <div class="loader">Buscando...</div>
+</div>
+
 </body>
 
 </html>
