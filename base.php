@@ -14,7 +14,8 @@
     //echo $phone;
     //$phone = '1';
     // ---------CONEXIÓN CON LA BASE DE DATOS----------------------------------
-    $basededatos = 'entrenamiento';
+    //$basededatos = 'entrenamiento';
+    $basededatos = 'pruebafacebook';
     $link = mysqli_connect("127.0.0.1:3306", "israel", "password");
     mysqli_select_db($link, $basededatos);
     $tildes = $link->query("SET NAMES 'utf8'");
