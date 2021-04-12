@@ -1,6 +1,6 @@
 
 <?php
-echo "V.1.4 ";
+
 include('header.html');
 
 ?>
@@ -14,6 +14,7 @@ include('header.html');
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="black.png">
     <style>
         
     </style>
@@ -49,7 +50,7 @@ include('header.html');
     <form action="base.php" method="post">
         <div class="wrapper">
             <div id="cener">
-                <h1>Comprueba si tus datos han sido filtrados</h1>
+                <h1>Comprueba si tus datos han sido filtrados<span id="resalt"> _</span></h1>
                 
                 <div class="search_box">
                     <input type="text" name="phone" placeholder="Introduzca la busqueda">

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="si">
-        <p>Se han connseguido los siguientes resultados</p>
+        <p>Se han conseguido los siguientes resultados</p>
     </div>
 </body>
 </html>

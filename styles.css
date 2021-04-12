@@ -66,4 +66,15 @@ button {
 
 h1 {
     margin-right: 10%;
+
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+#resalt {
+    animation: blinker 1s linear infinite;
 }
