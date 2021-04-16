@@ -1,7 +1,7 @@
 <html>
     <div class="col">
     <?php
-    if($row_cnt === 0){
+    if($row_cnt == 0){
         include('no.php');
     }
     else{
@@ -38,6 +38,8 @@
         }
         echo '</table>';
     }
+
     ?>
     </div>
 </html>
+
